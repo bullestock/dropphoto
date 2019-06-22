@@ -374,17 +374,6 @@ Wire Wire Line
 Connection ~ 8450 3500
 Wire Wire Line
 	8450 3500 8450 3550
-$Comp
-L Connector_Generic:Conn_01x02 J3
-U 1 1 5D006200
-P 9150 4900
-F 0 "J3" H 9230 4892 50  0000 L CNN
-F 1 "Conn_01x02" H 9230 4801 50  0000 L CNN
-F 2 "Connector_JST:JST_XH_B02B-XH-A_1x02_P2.50mm_Vertical" H 9150 4900 50  0001 C CNN
-F 3 "~" H 9150 4900 50  0001 C CNN
-	1    9150 4900
-	1    0    0    -1  
-$EndComp
 Text Notes 9850 2600 0    50   ~ 0
 LEDs
 Text Notes 9800 3700 0    50   ~ 0
@@ -580,8 +569,6 @@ F 3 "" H 5650 4400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5650 4400 5650 4500
-Wire Wire Line
-	5650 4900 5650 5050
 $Comp
 L power:GND #PWR04
 U 1 1 5CFF4B32
@@ -593,11 +580,6 @@ F 3 "" H 5650 5600 50  0001 C CNN
 	1    5650 5600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5650 5050 6350 5050
-Connection ~ 5650 5050
-Wire Wire Line
-	5650 5050 5650 5150
 $Comp
 L MCU_Module:Arduino_Nano_v3.x U1
 U 1 1 5CFC4273
@@ -919,29 +901,6 @@ Connection ~ 5650 4500
 Wire Wire Line
 	5650 4500 5650 4600
 $Comp
-L Connector_Generic:Conn_01x03 J6
-U 1 1 5D16979A
-P 6550 5050
-F 0 "J6" H 6630 5092 50  0000 L CNN
-F 1 "Conn_01x03" H 6630 5001 50  0000 L CNN
-F 2 "Connector_JST:JST_XH_B03B-XH-A_1x03_P2.50mm_Vertical" H 6550 5050 50  0001 C CNN
-F 3 "~" H 6550 5050 50  0001 C CNN
-	1    6550 5050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6350 5150 6250 5150
-Wire Wire Line
-	6250 5150 6250 5500
-Wire Wire Line
-	6250 5500 5650 5500
-Wire Wire Line
-	6350 4950 6250 4950
-Wire Wire Line
-	6250 4950 6250 4500
-Wire Wire Line
-	6250 4500 5650 4500
-$Comp
 L Device:C C9
 U 1 1 5D176C99
 P 4650 4950
@@ -962,55 +921,8 @@ Wire Wire Line
 Wire Wire Line
 	4650 5500 5100 5500
 Connection ~ 5100 5500
-$Comp
-L Connector_Generic:Conn_01x03 J5
-U 1 1 5D184B71
-P 1250 3700
-F 0 "J5" H 1168 4017 50  0000 C CNN
-F 1 "Conn_01x03" H 1168 3926 50  0000 C CNN
-F 2 "Connector_JST:JST_XH_B03B-XH-A_1x03_P2.50mm_Vertical" H 1250 3700 50  0001 C CNN
-F 3 "~" H 1250 3700 50  0001 C CNN
-	1    1250 3700
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR01
-U 1 1 5D193D6E
-P 1650 3500
-F 0 "#PWR01" H 1650 3350 50  0001 C CNN
-F 1 "+5V" H 1665 3673 50  0000 C CNN
-F 2 "" H 1650 3500 50  0001 C CNN
-F 3 "" H 1650 3500 50  0001 C CNN
-	1    1650 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR02
-U 1 1 5D194213
-P 1650 3900
-F 0 "#PWR02" H 1650 3650 50  0001 C CNN
-F 1 "GND" H 1655 3727 50  0000 C CNN
-F 2 "" H 1650 3900 50  0001 C CNN
-F 3 "" H 1650 3900 50  0001 C CNN
-	1    1650 3900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1650 3900 1650 3800
-Wire Wire Line
-	1650 3800 1450 3800
-Wire Wire Line
-	1450 3600 1650 3600
-Wire Wire Line
-	1650 3600 1650 3500
 Wire Wire Line
 	2200 3150 2200 3700
-Wire Wire Line
-	2200 3700 1450 3700
-Text Notes 950  3750 0    50   ~ 0
-OPTO
-Text Notes 6800 4900 0    50   ~ 0
-OPTO
 $Comp
 L power:+12V #PWR0101
 U 1 1 5D0619F3
@@ -1128,4 +1040,28 @@ F 3 "" H 6150 1350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6150 1350 6150 1100
+$Comp
+L Connector_Generic:Conn_01x02 J3
+U 1 1 5D006200
+P 9150 5000
+F 0 "J3" H 9230 4992 50  0000 L CNN
+F 1 "Conn_01x02" H 9230 4901 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B02B-XH-A_1x02_P2.50mm_Vertical" H 9150 5000 50  0001 C CNN
+F 3 "~" H 9150 5000 50  0001 C CNN
+	1    9150 5000
+	1    0    0    1   
+$EndComp
+Text GLabel 1950 3700 0    50   Input ~ 0
+OPTO
+Wire Wire Line
+	1950 3700 2200 3700
+Wire Wire Line
+	5650 4900 5650 5000
+Text GLabel 6050 5000 2    50   Input ~ 0
+OPTO
+Wire Wire Line
+	6050 5000 5650 5000
+Connection ~ 5650 5000
+Wire Wire Line
+	5650 5000 5650 5150
 $EndSCHEMATC
